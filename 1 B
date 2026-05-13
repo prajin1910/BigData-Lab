@@ -1,0 +1,21 @@
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+data = {
+    'Area':[600,800,1000,1200,1500],
+    'Price':[30,40,50,60,75]
+}
+
+df = pd.DataFrame(data)
+
+x = df[['Area']]
+y = df['Price']
+
+model = LinearRegression()
+model.fit(x,y)
+
+area = [[1100]]
+
+predicted = model.predict(area)
+
+print("Predicted Price :", predicted[0], "Lakhs")
