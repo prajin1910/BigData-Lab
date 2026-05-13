@@ -1,0 +1,20 @@
+use shop
+
+db.customer.insertOne(
+{
+name:"Arun",
+city:"Chennai",
+age:22
+}
+)
+
+db.customer.find()
+
+db.customer.updateOne(
+{name:"Arun"},
+{$set:{city:"Coimbatore"}}
+)
+
+db.customer.deleteOne(
+{name:"Arun"}
+)
