@@ -1,0 +1,22 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+data = {
+    'Salary':[20000,30000,25000,40000,35000],
+    'Age':[22,25,30,35,28]
+}
+
+df = pd.DataFrame(data)
+
+plt.boxplot(df['Salary'])
+plt.show()
+
+plt.hist(df['Age'])
+plt.show()
+
+plt.pie(df['Salary'], labels=df['Age'], autopct='%1.1f%%')
+plt.show()
+
+sns.heatmap(df.corr(), annot=True)
+plt.show()
