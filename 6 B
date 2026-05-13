@@ -1,0 +1,20 @@
+use company
+
+db.employee.insertOne(
+{
+name:"Ram",
+age:25,
+salary:30000
+}
+)
+
+db.employee.find()
+
+db.employee.updateOne(
+{name:"Ram"},
+{$set:{salary:40000}}
+)
+
+db.employee.deleteOne(
+{name:"Ram"}
+)
