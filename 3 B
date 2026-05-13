@@ -1,0 +1,25 @@
+import pandas as pd
+from sklearn.tree import DecisionTreeClassifier
+
+data = {
+    'Temperature':[30,25,20,35,28],
+    'Humidity':[70,90,80,60,75],
+    'Play':[1,0,1,1,0]
+}
+
+df = pd.DataFrame(data)
+
+x = df[['Temperature','Humidity']]
+y = df['Play']
+
+model = DecisionTreeClassifier()
+model.fit(x,y)
+
+test = [[29,65]]
+
+result = model.predict(test)
+
+if result[0] == 1:
+    print("Play")
+else:
+    print("No Play")
