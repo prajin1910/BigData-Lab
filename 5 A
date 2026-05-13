@@ -1,0 +1,19 @@
+from sklearn.datasets import load_iris
+from sklearn.cluster import KMeans
+import pandas as pd
+
+iris = load_iris()
+
+x = iris.data
+
+model1 = KMeans(n_clusters=1, random_state=0)
+model1.fit(x)
+
+print("K = 1")
+print(model1.labels_)
+
+model2 = KMeans(n_clusters=3, random_state=0)
+model2.fit(x)
+
+print("K = 3")
+print(model2.labels_)
