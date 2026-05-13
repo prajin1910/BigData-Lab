@@ -7,3 +7,14 @@ for line in sys.stdin:
     for word in words:
         if word.lower().startswith('s'):
             print("S\t1")
+
+# reducer.py
+import sys
+
+count = 0
+
+for line in sys.stdin:
+    key, value = line.strip().split('\t')
+    count += int(value)
+
+print("Words starting with S :", count)
